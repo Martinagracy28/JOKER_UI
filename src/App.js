@@ -48,6 +48,8 @@ import RecollateralizeApp from './components/DashboardNew/Recollateralize'
 import StablecoinApp from './components/DashboardNew/Stablecoin';
 import RedeemApp from './components/DashboardNew/StablecoinRedeem';
 import DashboardApp from './components/DashboardNew/Dashboard';
+import DashboardMainApp from './components/DashboardNew/DashboardJoker';
+import AdminPage from './components/DashboardNew/AdminPage';
 import BondApp from './components/DashboardNew/Bonds';
 
 export const DataContext = createContext();
@@ -80,6 +82,13 @@ function App() {
         <Route path="/dashboard">
           <DashboardApp />
         </Route>
+        <Route path="/dashboardMain">
+          <DashboardMainApp />
+        </Route>
+        <Route path="/adminPage">
+          <AdminPage />
+        </Route>
+        
         <Route path="/bond">
           <BondApp />
         </Route>
