@@ -11,6 +11,7 @@ import Approvepage from "./KycDid/Approvepage";
 import LauchpadApp from "./components/DashboardNew/Launchpad";
 import Burnvault from "./components/DashboardNew/BurnVault";
 import StableswapApp from './components/DashboardNew/Stableswap';
+
 import PoolNew from "./components/DashboardNew/poolNew";
 import Home from './components/HomePageswap';
 import SinglesideAmm from './components/HomePageswap';
@@ -49,6 +50,10 @@ import BuybackApp from './components/DashboardNew/Buyback'
 import RecollateralizeApp from './components/DashboardNew/Recollateralize'
 import StablecoinApp from './components/DashboardNew/Stablecoin';
 import MintingApp from './components/DashboardNew/MintCredit&DIME';
+import SwapApp from './components/DashboardNew/SwapJoker';
+import LiquidityApp from './components/DashboardNew/AddliquidityJoker';
+import MintTauApp from './components/DashboardNew/MintTau';
+
 import RedeemApp from './components/DashboardNew/StablecoinRedeem';
 import DashboardApp from './components/DashboardNew/Dashboard';
 import DashboardMainApp from './components/DashboardNew/DashboardJoker';
@@ -120,7 +125,16 @@ function App() {
         <Route path="/minting">
           <MintingApp />
         </Route>
+        <Route path="/swap">
+          <SwapApp />
+        </Route>
+        <Route path="/addliquidity">
+          <LiquidityApp />
+        </Route>
         
+        <Route path="/mintTau">
+          <MintTauApp />
+        </Route>
         <Route path="/redeem">
           <RedeemApp />
         </Route>     
