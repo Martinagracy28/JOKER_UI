@@ -42,7 +42,7 @@ const PieChart = ({x}) => {
        setusdcValue(totalsupply*jokerprice*10)
     }
 
-    const series1 = [usdcValue,jokerValue];
+    const series1 = [100,0];
     const options1 = {
         chart: {
             height: 350,
@@ -79,6 +79,19 @@ const PieChart = ({x}) => {
         },
         legend: {
             show: false
+        },
+        plugins: {
+            datalabels: {
+                formatter: function(value, context) {
+                    return 'Your Center Content';
+                },
+                align: 'center',
+                anchor: 'center',
+                color: '#ffffff',
+                font: {
+                    size: 14,
+                }
+            }
         },
         colors: ['rgb(77, 77, 77)', '#343434', '#2ecc71'],
     }

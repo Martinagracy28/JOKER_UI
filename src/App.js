@@ -11,6 +11,7 @@ import Approvepage from "./KycDid/Approvepage";
 import LauchpadApp from "./components/DashboardNew/Launchpad";
 import Burnvault from "./components/DashboardNew/BurnVault";
 import StableswapApp from './components/DashboardNew/Stableswap';
+
 import PoolNew from "./components/DashboardNew/poolNew";
 import Home from './components/HomePageswap';
 import SinglesideAmm from './components/HomePageswap';
@@ -49,10 +50,20 @@ import BuybackApp from './components/DashboardNew/Buyback'
 import RecollateralizeApp from './components/DashboardNew/Recollateralize'
 import StablecoinApp from './components/DashboardNew/Stablecoin';
 import MintingApp from './components/DashboardNew/MintCredit&DIME';
+import SwapApp from './components/DashboardNew/SwapJoker';
+import LiquidityApp from './components/DashboardNew/AddliquidityJoker';
+import MintTauApp from './components/DashboardNew/MintTau';
+
 import RedeemApp from './components/DashboardNew/StablecoinRedeem';
 import DashboardApp from './components/DashboardNew/Dashboard';
 import DashboardMainApp from './components/DashboardNew/DashboardJoker';
 import DashboardAdminMainApp from './components/DashboardNew/DashboardJokerAdmin';
+import DashboardJokerApp from './components/DashboardNew/DashboardJokerDashboard';
+import DashboardCarbonixApp from './components/DashboardNew/DashboardCarbonix';
+import DashboardTauApp from './components/DashboardNew/DashboardTau';
+
+import DashboardStasApp from './components/DashboardNew/StatsPage';
+import TauMintApp from './components/DashboardNew/TauMintpage';
 import AdminPage from './components/DashboardNew/AdminPage';
 import VaultPage from './components/DashboardNew/VaultPage';
 import Stabilizer from './components/DashboardNew/Stabilizer';
@@ -95,6 +106,22 @@ function App() {
         <Route path="/dashboardAdmin">
           <DashboardAdminMainApp />
         </Route> 
+        <Route path="/dashboardjoker">
+          <DashboardJokerApp />
+        </Route> 
+        <Route path="/dashboardcarbonix">
+          <DashboardCarbonixApp />
+        </Route> 
+        <Route path="/dashboardtau">
+          <DashboardTauApp />
+        </Route> 
+        
+        <Route path="/statspage">
+          <DashboardStasApp />
+        </Route> 
+        <Route path="/tauMint">
+          <TauMintApp />
+        </Route> 
         <Route path="/stabilizer">
           <Stabilizer />
         </Route> 
@@ -120,7 +147,16 @@ function App() {
         <Route path="/minting">
           <MintingApp />
         </Route>
+        <Route path="/swap">
+          <SwapApp />
+        </Route>
+        <Route path="/addliquidity">
+          <LiquidityApp />
+        </Route>
         
+        <Route path="/mintTau">
+          <MintTauApp />
+        </Route>
         <Route path="/redeem">
           <RedeemApp />
         </Route>     

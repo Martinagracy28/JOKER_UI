@@ -704,8 +704,8 @@ function PoolChild() {
                                 <img src={stasiscoin} alt="logo" /><span class="ms-3">DIME</span>
                             </div>
                             <p className='mb-0 d-flex text-sm align-items-center justify-content-md-start justify-content-center'>
-                                {/* <span className='text-muted text-end'>Coverage Ratio</span>  */}
-                                {/* <h5 className="mb-0 ms-1 px-1">{swapstate.cashAdded?formatter(swapstate.cashAdded/swapstate.Liability):'0.0'}</h5> */}
+                                {/* <span className='text-muted text-end'>Coverage Ratio</span> 
+                                <h5 className="mb-0 ms-1 px-1">{swapstate.cashAdded?formatter(swapstate.cashAdded/swapstate.Liability):'0.0'}</h5> */}
                                 {/* <OverlayTrigger
                                     key="right"
                                     placement="right"
@@ -724,33 +724,37 @@ function PoolChild() {
                         </div>
                         <div className="flex-grow-1 pe-md-4 mb-md-0 mb-3 justify-content-between d-flex align-items-center">
                             <div class="mr-1">
-                                <h6 class="sub-heading text-xs mb-0">Pool deposits</h6>
+                                <h6 class="sub-heading text-xs mb-0">APR</h6>
                                 <OverlayTrigger
                                     key="left"
                                     placement="left"
                                     overlay={
                                         <Tooltip id={`tooltip-left`}>
-                                        {TotalStakedAmount ? parseFloat(TotalStakedAmount/1e9).toFixed(3):'0.0'}
+                                      13%
                                         </Tooltip>
                                     }
                                     >
-                                    <h5 class="mb-0 d-flex align-items-center"> {TotalStakedAmount ? parseFloat(TotalStakedAmount/1e9).toFixed(3):'0.0'} </h5>
+                                    <h5 class="mb-0 d-flex align-items-center"> {TotalStakedAmount ? parseFloat(TotalStakedAmount/1e9).toFixed(3):'13%'} </h5>
                                 </OverlayTrigger>
-                                <OverlayTrigger
-                                    key="left"
-                                    placement="left"
-                                    overlay={
-                                        <Tooltip id={`tooltip-left`}>
-                                             USDCe
-                                        </Tooltip>
-                                    }
-                                    >
-                                    <h6 class="sub-heading text-xs mb-0">DIME_USDC LP</h6>
-                                </OverlayTrigger>
+                               
                             </div>
-                           
                             <div class="mr-1">
-                                <h6 class="sub-heading text-xs mb-0">My Liquidity </h6>
+                                <h6 class="sub-heading text-xs mb-0">Earned</h6>
+                                <OverlayTrigger
+                                    key="left"
+                                    placement="left"
+                                    overlay={
+                                        <Tooltip id={`tooltip-left`}>
+                                       120
+                                        </Tooltip>
+                                    }
+                                    >
+                                    <h5 class="mb-0 d-flex align-items-center">129 DIME </h5>
+                                </OverlayTrigger>
+                              
+                            </div>
+                            <div class="mr-1">
+                                <h6 class="sub-heading text-xs mb-0"> Staked Liquidity</h6>
                                 <OverlayTrigger
                                     key="left"
                                     placement="left"
@@ -760,142 +764,45 @@ function PoolChild() {
                                         </Tooltip>
                                     }
                                     >
-                                    <h5 class="mb-0 d-flex align-items-center">{mystaked?parseFloat(mystaked/1e9).toFixed(3):'0.0'}</h5>
+                                    <h5 class="mb-0 d-flex align-items-center">129 DIME</h5>
                                 </OverlayTrigger>
+                               
+                            </div>
+                            <div class="mr-1">
+                                <h6 class="sub-heading text-xs mb-0"> Available Reward</h6>
                                 <OverlayTrigger
                                     key="left"
                                     placement="left"
                                     overlay={
                                         <Tooltip id={`tooltip-left`}>
-                                             USDC
+                                        Total deposited Liquidity Amount
                                         </Tooltip>
                                     }
                                     >
-                                    <h6 class="sub-heading text-xs mb-0">DIME_USDC LP</h6>
+                                    <h5 class="mb-0 d-flex align-items-center">129 DIME</h5>
                                 </OverlayTrigger>
+                              
                             </div>
-                        </div>
-                        <Stack direction="horizontal" className="justify-content-center" gap={3}>
-                            {/* <ButtonLoad loading={loader1} onClick={()=>assetoptin()} disabled={!ptpptpoptin} variant="blue">Asset Opt-In</ButtonLoad> */}
-                            <Button onClick={()=>clickevent("Deposit")}  variant="blue">Stake</Button>
-                            {/* {stakedAmount>1?(<>  <Button variant="blue" 
-                            disabled={ptpptpoptin}
-                              onClick={()=>clickevent("Withdraw")} >Unstake</Button>
-                              </>):(<> */}
-                              {parseInt(unstakeTime) <= (Math.floor(new Date().getTime() / 1000)) ?
-                               (<>
-                                <Button variant="blue" 
-                            // disabled={true}
-                              onClick={()=>clickevent("Withdraw")} >Unstake</Button>
-                               </>):(<>
-                                <Button variant="blue" 
-                            disabled={true}
-                              onClick={()=>clickevent("Withdraw")} >Unstake</Button>
-                               </>)}
+                            <div class="mr-1">
+                                <h6 class="sub-heading text-xs mb-0">My Staked</h6>
+                                <OverlayTrigger
+                                    key="left"
+                                    placement="left"
+                                    overlay={
+                                        <Tooltip id={`tooltip-left`}>
+                                        Total deposited Liquidity Amount
+                                        </Tooltip>
+                                    }
+                                    >
+                                    <h5 class="mb-0 d-flex align-items-center">129 DIME</h5>
+                                </OverlayTrigger>
                                
-                              {/* </>)} */}
-                          
-                        </Stack>
-                    </div>
-                </div>
-                <div className="accordion-body py-3">
-                    <div className="d-flex align-items-center justify-content-between">
-                        <div className="text-sm d-flex flex-wrap align-items-center">
-                            <div className="d-flex align-items-center me-3">
-                                <span className="text-muted me-2">Reward</span>
-                                <img src={stasiscoin} alt="logo" width={15} />
-                            </div>
-                            <div className="d-flex align-items-center me-3">
-                                <span className="text-muted me-1"></span>
-                                <span className="me-1">
-                                    {/* {parseFloat(baseApr/100000000).toFixed(2)} */}
-                                 </span>
-                                {/* <OverlayTrigger
-                                    key="right"
-                                    placement="right"
-                                    overlay={
-                                        <Tooltip id={`tooltip-right`}>
-                                            Base APR allocated for the liquidity providers.
-                                        </Tooltip>
-                                    }
-                                    >
-                                        <svg className="ms-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-                                        </svg>
-                                    </OverlayTrigger> */}
-                            </div>
-                            <div className="d-flex align-items-center me-3">
-                                {/* <span className="text-muted me-1">Median Boosted APR</span>
-                                <span className="me-1">{parseFloat(BoostingApr).toFixed(2)}%</span>
-                                <OverlayTrigger
-                                    key="right"
-                                    placement="right"
-                                    overlay={
-                                        <Tooltip id={`tooltip-right`}>
-                                            Median APR of this pool for the users who have deposited and staked USDCe.
-                                        </Tooltip>
-                                    }
-                                    >
-                                        <svg className="ms-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-                                        </svg>
-                                    </OverlayTrigger> */}
-                            </div>
-                            <div className="d-flex align-items-center me-3">
-                                {/* <span className="text-muted me-1">Total APR</span>
-                                <span className="me-1">{parseFloat((baseApr/1000000)+(BoostingApr/100)).toFixed(2)}%</span>
-                                <OverlayTrigger
-                                    key="right"
-                                    placement="right"
-                                    overlay={
-                                        <Tooltip id={`tooltip-right`}>
-                                            Total APR of pool.
-                                        </Tooltip>
-                                    }
-                                    >
-                                        <svg className="ms-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-                                        </svg>
-                                    </OverlayTrigger> */}
                             </div>
                         </div>
-                        <span className="text-muted me-20">Rewards Earned:</span><span className="me-1">
-                            {/* {claimamount  && stakedAmount > 1 ?parseFloat(claimamount/1000000).toFixed(6):"0.0"} */}
-                            {Myreward?parseFloat(Myreward/1e9).toFixed(6):'0.0'}
-                            </span>
-                            {Myreward? 
-                            (<>
-                             {Myreward > 1e13 ?
-                       (<>
-                       <ButtonLoad loading={loader1} variant="blue" 
-                        // disabled={true}
-                        onClick={()=>claim()}
-                        >
-                            Claim Reward
-                            {/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="ms-2" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                            </svg> */}
-                        </ButtonLoad>
-                       </>):(<>
-                        <Button variant="blue" 
-                        disabled={true}
-                        onClick={()=>claim()}
-                        >
-                            Claim Reward
-                            {/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="ms-2" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                            </svg> */}
-                        </Button>
-                       </>)}
-                            </>):
-                            (<></>)}
-                      
                         
                     </div>
                 </div>
+              
             </div>
         </> 
      );
