@@ -806,7 +806,7 @@ const usdcMaxTau = () =>
                                                     <img src={creditscoin} alt="USDC" />
                                                     <div className="ms-3 text-start">
                                                         
-                                                        <h5 className='mb-0 font-semibold'>CREDIT</h5>
+                                                        <h5 className='mb-0 font-semibold'>ETH</h5>
                                                         {/* <h5 className='sub-heading text-xs mb-0'>Bal: {parseFloat(tauBalances) ? (parseFloat(tauBalances)/1000000).toFixed(2) : '0.00'}</h5> */}
                                                     </div>
                                                 </Button>
