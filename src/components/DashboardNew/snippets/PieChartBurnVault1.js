@@ -59,7 +59,7 @@ const PieChart = ({x}) => {
         },
         // colors: ['#55689e', '#2c3862'],
         dataLabels: {
-            enabled: false,
+            enabled: true,
         },
         stroke: {
             curve: 'smooth',

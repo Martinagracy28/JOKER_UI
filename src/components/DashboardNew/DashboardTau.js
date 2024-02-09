@@ -369,15 +369,75 @@ const Dashboard = () => {
        
     
     }
+
+    const TransactionTable = ({ transactions }) => {
+        return (
+          <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+            <thead>
+              <tr>
+                <th style={tableCellStyle}>S.no</th>
+                <th style={tableCellStyle}>Txnhash</th>
+                <th style={tableCellStyle}>From</th>
+                <th style={tableCellStyle}>To</th>
+                <th style={tableCellStyle}>Time</th>
+                <th style={tableCellStyle}>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {transactions.map((transaction, index) => (
+                <tr key={index} style={tableRowStyle}>
+                  <td style={tableCellStyle}>{index + 1}</td>
+                  <td style={tableCellStyle}>{transaction.txnHash}</td>
+                  <td style={tableCellStyle}>{transaction.from}</td>
+                  <td style={tableCellStyle}>{transaction.to}</td>
+                  <td style={tableCellStyle}>{transaction.time}</td>
+                  <td style={tableCellStyle}>{transaction.amount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        );
+      };
+      
+      const tableCellStyle = {
+        border: '1px solid black',
+        padding: '8px',
+      };
+      
+      const tableRowStyle = {
+        textAlign: 'center',
+      };
+      
+      const transactions = [
+        {
+          txnHash: '0x123456789',
+          from: 'Sender 1',
+          to: 'Receiver 1',
+          time: '2024-02-09 10:30:00',
+          amount: '$100',
+        },
+        {
+          txnHash: '0x987654321',
+          from: 'Sender 2',
+          to: 'Receiver 2',
+          time: '2024-02-09 11:45:00',
+          amount: '$150',
+        },
+        // Add more transactions as needed
+      ];
+      
+      
     return (
         <Layout>
             <Container>
                 <Row>
-                    <Col md={3} className="mb-4">
+                  
+                    <Col md={3}>
+                   
                     <Card className='card-dash border-0 mb-4'>
                             <Row>
                                 <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple"><img src={jokercoin} width={35} height={35}></img>&nbsp;JOKER   
+                            <div className="text-md mb-20 font-semibold leading-7 text-purple"><img src={jokercoin} width={35} height={35}></img>&nbsp;TAU   
                            
                             </div>
                             </Col>
@@ -412,162 +472,112 @@ const Dashboard = () => {
                                
                             </div>
                         </div>                    
-                        </Card>    
-
+                        </Card>  
                     </Col>
                     <Col md={3}>
                    
-                    <Card className='card-dash border-0 mb-4'>
-                            <Row>
-                                <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple"> <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME  
+                   <Card className='card-dash border-0 mb-4'>
+                           <Row>
+                               <Col>
+                           <div className="text-md mb-20 font-semibold leading-7 text-purple">
+                                {/* <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME   */}
+                           {/* <h6 className='sub-heading mb-0'> */}
+                                       Circulatingsupply
+                                   {/* </h6> */}
+                           </div>
+                           </Col>
+                           <hr className='mb-20 mt-0' />
                           
-                            </div>
-                            </Col>
-                            <hr className='mb-20 mt-0' />
-                           
-                            </Row>
-                            <div className='mb-20'>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <h6 className='sub-heading mb-0'>
-                                        Price
-                                    </h6>
-                                </div>
-                               
+                           </Row>
+                           <div className='mb-20'>
+                           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                              
+                              
 
-                                <div>
-                                
-                                <h4 className='mb-2'>${parseFloat(DimePrice / 1e8) ? parseFloat(DimePrice / 1e8).toFixed(3) : "0"}</h4>
-                                   
-                                </div>
-
+                               <div>
                                
-                            </div>
-                        </div>
-                
-                        </Card>
-                    </Col>
+                               <h4 className='mb-2'>${parseFloat(DimePrice / 1e8) ? parseFloat(DimePrice / 1e8).toFixed(3) : "0"}</h4>
+                                  
+                               </div>
+
+                              
+                           </div>
+                       </div>
+               
+                       </Card>
+                   </Col>
                     <Col md={3}>
                    
-                    <Card className='card-dash border-0 mb-4'>
-                            <Row>
-                                <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple"><img src={creditscoin} width={35} height={35}></img>&nbsp;CREDIT
-                           
-                            </div>
-                            </Col>
-                            <hr className='mb-20 mt-0' />
-                           
-                            </Row>
+                   <Card className='card-dash border-0 mb-4'>
+                           <Row>
+                               <Col>
+                           <div className="text-md mb-20 font-semibold leading-7 text-purple">
+                                {/* <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME   */}
+                           {/* <h6 className='sub-heading mb-0'> */}
+                                       MarketCap
+                                   {/* </h6> */}
+                           </div>
+                           </Col>
+                           <hr className='mb-20 mt-0' />
+                          
+                           </Row>
                            <div className='mb-20'>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <h6 className='sub-heading mb-0'>
-                                        Price
-                                    </h6>
-                                </div>
+                           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                              
+                              
+
+                               <div>
                                
-                                <div >
-                               
-                                <h4 className='mb-2'>${parseFloat(CreditPrice/1e8)?parseFloat(CreditPrice/1e8).toFixed(3):"0"}</h4>
-                               
-                            </div>  
-                                </div>
-                                </div>                    
-                        </Card>
+                               <h4 className='mb-2'>${parseFloat(DimePrice / 1e8) ? parseFloat(DimePrice / 1e8).toFixed(3) : "0"}</h4>
+                                  
+                               </div>
+
+                              
+                           </div>
+                       </div>
+               
+                       </Card>
                    </Col>
                    <Col md={3}>
                    
                    <Card className='card-dash border-0 mb-4'>
                            <Row>
                                <Col>
-                           <div className="text-md mb-20 font-semibold leading-7 text-purple"><img src={creditscoin} width={35} height={35}></img>&nbsp;Treasury
-                          
+                           <div className="text-md mb-20 font-semibold leading-7 text-purple">
+                                {/* <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME   */}
+                           {/* <h6 className='sub-heading mb-0'> */}
+                                     Treasury Price
+                                   {/* </h6> */}
                            </div>
                            </Col>
                            <hr className='mb-20 mt-0' />
                           
                            </Row>
-                          <div className='mb-20'>
+                           <div className='mb-20'>
                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                              
+                              
+
                                <div>
-                                   <h6 className='sub-heading mb-0'>
-                                       Price
-                                   </h6>
-                               </div>
-                              
-                               <div >
-                              
-                               <h4 className='mb-2'>${parseFloat(CreditPrice/1e8)?parseFloat(CreditPrice/1e8).toFixed(3):"0"}</h4>
-                              
-                           </div>  
-                               </div>
-                               </div>                    
-                       </Card>
-                  </Col>
-                </Row>
-                <Row>
-                <Col md={6} className="mb-4">
-                <Card className='card-dash border-0 mb-4'>
-                            <Row>
-                                <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple">DIME Rebase 
-                           
-                            </div>
-                            </Col>
-                            <Col>
-                           
-                            </Col>
-                            </Row>
-                            <div className='mb-20'>
-                                {/* <h6 className='sub-heading mb-0'>
-                                    Total value
-                                </h6> */}
-                                  <hr className='mb-20 mt-0' />
-                                <Row className='justify-content-center'>
-                                    <Col xs={12} sm={6} className="mb-sm-0 text-center mb-3">
-                                    {/* <PieChartBurnVault1 /> */}
-                                    <img src={reabseTimer} />
-                                    </Col>
-                                   
-                                </Row>
                                
-                               
-                            </div>                      
-                        </Card>
-                       
+                               <h4 className='mb-2'>${parseFloat(DimePrice / 1e8) ? parseFloat(DimePrice / 1e8).toFixed(3) : "0"}</h4>
+                                  
+                               </div>
+
+                              
+                           </div>
+                       </div>
                
-                    </Col>
-                    <Col md={6} className="mb-4">
-                    <Card className='card-dash border-0 mb-4'>
-                            <Row>
-                                <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple">CREDIT Rebase 
-                           
-                            </div>
-                            </Col>
-                            <Col>
-                           
-                            </Col>
-                            </Row>
-                            <div className='mb-20'>
-                                {/* <h6 className='sub-heading mb-0'>
-                                    Total value
-                                </h6> */}
-                                  <hr className='mb-20 mt-0' />
-                                <Row className='justify-content-center'>
-                                    <Col xs={12} sm={6} className="mb-sm-0 text-center mb-3">
-                                    {/* <PieChartBurnVault1 /> */}
-                                    <img src={reabseTimer} />
-                                    </Col>
-                                   
-                                </Row>
-                               
-                               
-                            </div>                      
-                        </Card>
-                    </Col>
+                       </Card>
+                   </Col>
+                   
+                </Row>
+            
+                <Row>
+                <div>
+      <h1>Transaction History</h1>
+      <TransactionTable transactions={transactions} />
+    </div>
                 </Row>
             </Container>
         </Layout>

@@ -58,6 +58,12 @@ import RedeemApp from './components/DashboardNew/StablecoinRedeem';
 import DashboardApp from './components/DashboardNew/Dashboard';
 import DashboardMainApp from './components/DashboardNew/DashboardJoker';
 import DashboardAdminMainApp from './components/DashboardNew/DashboardJokerAdmin';
+import DashboardJokerApp from './components/DashboardNew/DashboardJokerDashboard';
+import DashboardCarbonixApp from './components/DashboardNew/DashboardCarbonix';
+import DashboardTauApp from './components/DashboardNew/DashboardTau';
+
+import DashboardStasApp from './components/DashboardNew/StatsPage';
+import TauMintApp from './components/DashboardNew/TauMintpage';
 import AdminPage from './components/DashboardNew/AdminPage';
 import VaultPage from './components/DashboardNew/VaultPage';
 import Stabilizer from './components/DashboardNew/Stabilizer';
@@ -99,6 +105,22 @@ function App() {
         </Route>
         <Route path="/dashboardAdmin">
           <DashboardAdminMainApp />
+        </Route> 
+        <Route path="/dashboardjoker">
+          <DashboardJokerApp />
+        </Route> 
+        <Route path="/dashboardcarbonix">
+          <DashboardCarbonixApp />
+        </Route> 
+        <Route path="/dashboardtau">
+          <DashboardTauApp />
+        </Route> 
+        
+        <Route path="/statspage">
+          <DashboardStasApp />
+        </Route> 
+        <Route path="/tauMint">
+          <TauMintApp />
         </Route> 
         <Route path="/stabilizer">
           <Stabilizer />

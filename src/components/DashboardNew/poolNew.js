@@ -1223,8 +1223,12 @@ try {
                     >
                          <Tab eventKey="main" title={<span style={{ color: Theme === 'light' ? 'black' : 'white' }}>Main Pool</span>}>
       <PoolChild />
-      <PoolChild11 />
-      <PoolChild1 />
+      <PoolChild />
+      <PoolChild />
+      <PoolChild />
+      <PoolChild />
+      {/* <PoolChild11 />
+      <PoolChild1 /> */}
       {/* <PoolChild2 /> */}
       {/* <PoolChild3 /> */}
       {/* <PoolChild />

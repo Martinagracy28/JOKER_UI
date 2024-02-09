@@ -369,59 +369,79 @@ const Dashboard = () => {
        
     
     }
+
+    const TransactionTable = ({ transactions }) => {
+        return (
+          <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+            <thead>
+              <tr>
+                <th style={tableCellStyle}>S.no</th>
+                <th style={tableCellStyle}>Txnhash</th>
+                <th style={tableCellStyle}>From</th>
+                <th style={tableCellStyle}>To</th>
+                <th style={tableCellStyle}>Time</th>
+                <th style={tableCellStyle}>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {transactions.map((transaction, index) => (
+                <tr key={index} style={tableRowStyle}>
+                  <td style={tableCellStyle}>{index + 1}</td>
+                  <td style={tableCellStyle}>{transaction.txnHash}</td>
+                  <td style={tableCellStyle}>{transaction.from}</td>
+                  <td style={tableCellStyle}>{transaction.to}</td>
+                  <td style={tableCellStyle}>{transaction.time}</td>
+                  <td style={tableCellStyle}>{transaction.amount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        );
+      };
+      
+      const tableCellStyle = {
+        border: '1px solid black',
+        padding: '8px',
+      };
+      
+      const tableRowStyle = {
+        textAlign: 'center',
+      };
+      
+      const transactions = [
+        {
+          txnHash: '0x123456789',
+          from: 'Sender 1',
+          to: 'Receiver 1',
+          time: '2024-02-09 10:30:00',
+          amount: '$100',
+        },
+        {
+          txnHash: '0x987654321',
+          from: 'Sender 2',
+          to: 'Receiver 2',
+          time: '2024-02-09 11:45:00',
+          amount: '$150',
+        },
+        // Add more transactions as needed
+      ];
+      
+      
     return (
         <Layout>
             <Container>
                 <Row>
-                    <Col md={3} className="mb-4">
-                    <Card className='card-dash border-0 mb-4'>
-                            <Row>
-                                <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple"><img src={jokercoin} width={35} height={35}></img>&nbsp;JOKER   
-                           
-                            </div>
-                            </Col>
-                            <hr className='mb-20 mt-0' />
-                           
-                            </Row>
-                           
-
-                              <div className='mb-20'>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <h6 className='sub-heading mb-0'>
-                                        Price
-                                    </h6>
-                                    {/* <h4 className='mb-2'>${parseFloat(JokerPrice/1e8)?parseFloat(JokerPrice/1e8).toFixed(3):"0"}</h4> */}
-                                </div>
-                                {/* <div>
-                                    <h6 className='sub-heading mb-0'>
-                                        MarketCap
-                                    </h6>
-                                    <h4 className='mb-2'>${parseFloat(JokerTotalSupply / 1e8) ? parseFloat((JokerTotalSupply*JokerPrice) / 1e17).toFixed(3) : "0"}</h4>
-                                </div> */}
-
-                                <div>
-                                {/* <h6 className='sub-heading mb-0'>
-                                 Liquidity Value
-                                </h6> */}
-                                 <h4 className='mb-2'>${parseFloat(LiquidityValue / 1e8) ? parseFloat((LiquidityValue*JokerPrice) / 1e17).toFixed(3) : "0"}</h4>
-                                   
-                                </div>
-
-                               
-                            </div>
-                        </div>                    
-                        </Card>    
-
-                    </Col>
+                  
                     <Col md={3}>
                    
                     <Card className='card-dash border-0 mb-4'>
                             <Row>
                                 <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple"> <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME  
-                          
+                            <div className="text-md mb-20 font-semibold leading-7 text-purple">
+                                 {/* <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME   */}
+                            {/* <h6 className='sub-heading mb-0'> */}
+                                        Tax fees
+                                    {/* </h6> */}
                             </div>
                             </Col>
                             <hr className='mb-20 mt-0' />
@@ -429,11 +449,7 @@ const Dashboard = () => {
                             </Row>
                             <div className='mb-20'>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <h6 className='sub-heading mb-0'>
-                                        Price
-                                    </h6>
-                                </div>
+                               
                                
 
                                 <div>
@@ -450,69 +466,109 @@ const Dashboard = () => {
                     </Col>
                     <Col md={3}>
                    
-                    <Card className='card-dash border-0 mb-4'>
-                            <Row>
-                                <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple"><img src={creditscoin} width={35} height={35}></img>&nbsp;CREDIT
-                           
-                            </div>
-                            </Col>
-                            <hr className='mb-20 mt-0' />
-                           
-                            </Row>
+                   <Card className='card-dash border-0 mb-4'>
+                           <Row>
+                               <Col>
+                           <div className="text-md mb-20 font-semibold leading-7 text-purple">
+                                {/* <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME   */}
+                           {/* <h6 className='sub-heading mb-0'> */}
+                                       Liqidity fees 
+                                   {/* </h6> */}
+                           </div>
+                           </Col>
+                           <hr className='mb-20 mt-0' />
+                          
+                           </Row>
                            <div className='mb-20'>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <h6 className='sub-heading mb-0'>
-                                        Price
-                                    </h6>
-                                </div>
+                           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                              
+                              
+
+                               <div>
                                
-                                <div >
+                               <h4 className='mb-2'>${parseFloat(DimePrice / 1e8) ? parseFloat(DimePrice / 1e8).toFixed(3) : "0"}</h4>
+                                  
+                               </div>
+
+                              
+                           </div>
+                       </div>
+               
+                       </Card>
+                   </Col>
+                    <Col md={3}>
+                   
+                   <Card className='card-dash border-0 mb-4'>
+                           <Row>
+                               <Col>
+                           <div className="text-md mb-20 font-semibold leading-7 text-purple">
+                                {/* <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME   */}
+                           {/* <h6 className='sub-heading mb-0'> */}
+                                       Burn fees
+                                   {/* </h6> */}
+                           </div>
+                           </Col>
+                           <hr className='mb-20 mt-0' />
+                          
+                           </Row>
+                           <div className='mb-20'>
+                           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                              
+                              
+
+                               <div>
                                
-                                <h4 className='mb-2'>${parseFloat(CreditPrice/1e8)?parseFloat(CreditPrice/1e8).toFixed(3):"0"}</h4>
-                               
-                            </div>  
-                                </div>
-                                </div>                    
-                        </Card>
+                               <h4 className='mb-2'>${parseFloat(DimePrice / 1e8) ? parseFloat(DimePrice / 1e8).toFixed(3) : "0"}</h4>
+                                  
+                               </div>
+
+                              
+                           </div>
+                       </div>
+               
+                       </Card>
                    </Col>
                    <Col md={3}>
                    
                    <Card className='card-dash border-0 mb-4'>
                            <Row>
                                <Col>
-                           <div className="text-md mb-20 font-semibold leading-7 text-purple"><img src={creditscoin} width={35} height={35}></img>&nbsp;Treasury
-                          
+                           <div className="text-md mb-20 font-semibold leading-7 text-purple">
+                                {/* <img src={stasiscoin} width={35} height={35}></img>&nbsp; DIME   */}
+                           {/* <h6 className='sub-heading mb-0'> */}
+                                       Treasury fees
+                                   {/* </h6> */}
                            </div>
                            </Col>
                            <hr className='mb-20 mt-0' />
                           
                            </Row>
-                          <div className='mb-20'>
+                           <div className='mb-20'>
                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                              
+                              
+
                                <div>
-                                   <h6 className='sub-heading mb-0'>
-                                       Price
-                                   </h6>
+                               
+                               <h4 className='mb-2'>${parseFloat(DimePrice / 1e8) ? parseFloat(DimePrice / 1e8).toFixed(3) : "0"}</h4>
+                                  
                                </div>
+
                               
-                               <div >
-                              
-                               <h4 className='mb-2'>${parseFloat(CreditPrice/1e8)?parseFloat(CreditPrice/1e8).toFixed(3):"0"}</h4>
-                              
-                           </div>  
-                               </div>
-                               </div>                    
+                           </div>
+                       </div>
+               
                        </Card>
-                  </Col>
+                   </Col>
+                   
                 </Row>
                 <Row>
-                <Col md={6} className="mb-4">
+              
+                    <Col md={6} className="mb-4">
                 <Card className='card-dash border-0 mb-4'>
                             <Row>
                                 <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple">DIME Rebase 
+                            <div className="text-md mb-20 font-semibold leading-7 text-purple">Wallet to be unlocked in
                            
                             </div>
                             </Col>
@@ -540,10 +596,10 @@ const Dashboard = () => {
                
                     </Col>
                     <Col md={6} className="mb-4">
-                    <Card className='card-dash border-0 mb-4'>
+                <Card className='card-dash border-0 mb-4'>
                             <Row>
                                 <Col>
-                            <div className="text-md mb-20 font-semibold leading-7 text-purple">CREDIT Rebase 
+                            <div className="text-md mb-20 font-semibold leading-7 text-purple">Overall JOKER Token  
                            
                             </div>
                             </Col>
@@ -558,16 +614,43 @@ const Dashboard = () => {
                                   <hr className='mb-20 mt-0' />
                                 <Row className='justify-content-center'>
                                     <Col xs={12} sm={6} className="mb-sm-0 text-center mb-3">
-                                    {/* <PieChartBurnVault1 /> */}
-                                    <img src={reabseTimer} />
+                                    <PieChartBurnVault1 />
+                                    {/* <img src={reabseTimer} /> */}
                                     </Col>
-                                   
+                                    <Col xs={'auto'} sm={6}>
+                                        <div className='mb-20 pt-sm-3'>
+                                            <div className="text-sm d-flex align-items-center mb-1  ">
+                                                <svg className="d-inline-block me-2" style={{width: '16px', height: '16px', borderRadius: '4px'}}><rect fill="black" x="0" y="0" width="16" height="16"></rect></svg>
+                                                JOKER  in Burn Vault 
+                                              
+                                              
+                                            </div>
+                                            {/* <h6>{parseInt((tauTotalSupply - parseFloat(tauCir)/1000000)) ? (parseInt((tauTotalSupply - parseFloat(tauCir)/1000000).toFixed(0))).toLocaleString() : "0"} TAU</h6> */}
+                                        </div>
+                                        <div className='mb-20'>
+                                            <div className="text-sm d-flex align-items-center mb-1  ">
+                                                <svg className="d-inline-block me-2" style={{width: '16px', height: '16px', borderRadius: '4px'}}><rect fill="rgb(77, 77, 77)" x="0" y="0" width="16" height="16"></rect></svg>
+                                            JOKER Burned
+
+                                               
+                                            </div>
+                                            {/* <h6>{(parseInt((parseFloat(tauCir)/1000000))) ? (parseInt((parseFloat(tauCir)/1000000).toFixed(0))).toLocaleString() : "0"} TAU</h6> */}
+                                        </div>
+                                    </Col>
                                 </Row>
                                
                                
                             </div>                      
                         </Card>
+                       
+               
                     </Col>
+                </Row>
+                <Row>
+                <div>
+      <h1>Transaction History</h1>
+      <TransactionTable transactions={transactions} />
+    </div>
                 </Row>
             </Container>
         </Layout>
