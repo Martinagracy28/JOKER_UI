@@ -380,7 +380,7 @@ const Sidebar = ({activeClass, handleLink}) => {
                     </Dropdown> */}
                 {/* </li> */}
                 <li>
-                    <Link to="/statspage" activeClassName='active'><img src={StablecoinHub} alt="Faucet" /> {device > 1199 && activeClass ? '' : 'Stats'}</Link>
+                    <Link to="/statspage" activeClassName='active'><img src={StablecoinHub} alt="Faucet" /> {device > 1199 && activeClass ? '' : 'Analytics'}</Link>
                 </li>
                 {/* <Badge className='badge1'>New!</Badge> */}
                 {/* <li>
